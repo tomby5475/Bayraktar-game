@@ -5,6 +5,10 @@ class Game {
         this.backgroundImage 
         this.tanks = new Tanks()
     }
+    setup() {
+        this.tanks.setup()
+    }
+
     draw() {
         this.background.draw()
         this.tanks.draw()
