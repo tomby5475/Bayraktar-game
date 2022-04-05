@@ -2,13 +2,15 @@
 class Game {
     constructor (){
         this.background = new Background()
-        this.backgroundImage
+        this.backgroundImage 
+        this.tanks = []
     }
     draw() {
-        background(this.backgroundImage)
+        this.background.draw()
     }
     preload() {
-        this.backgroundImage = loadImage('/images/vecteezy_geometric-mosaic-pixel-abstract-pattern-blue-white_4412939.jpg')
+        this.backgroundImage = loadImage('/images/field.jpg')
+        this.tankImage = loadImage('/images/tank.png')
     }
 }
 
