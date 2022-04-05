@@ -1,7 +1,4 @@
-
-
 class Background {
-
     constructor() {
         this.speed = 2
         this.x = 0
@@ -13,7 +10,6 @@ class Background {
         this.x -= this.speed
         if (this.x <= -width) {
             this.x = 0
+        }
     }
 }
-
- }
