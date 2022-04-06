@@ -1,14 +1,14 @@
 const game = new Game()
 
 const width = 1000;
-const heigth = 600;
+const height = 600;
 
 function draw() {
 	game.draw()
 }
 
 function setup() {
-    createCanvas(width, heigth)
+    createCanvas(width, height)
     game.setup()
 }
 
