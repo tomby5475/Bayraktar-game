@@ -3,15 +3,21 @@ class Game {
     constructor (){
         this.background = new Background()
         this.backgroundImage 
-        this.tanks = new Tanks()
+        this.tanksArr = []
     }
+
     setup() {
-        this.tanks.setup()
+        // this.tanks.setup()
     }
 
     draw() {
         this.background.draw()
-        this.tanks.draw()
+        if (frameCount % 80 === 0) {
+            this.tanksArr.push(new Tanks())
+        }
+        this.tanksArr.forEach(function(tank) {
+             tank.draw()
+        })
     }
     preload() {
         this.backgroundImage = loadImage('/images/field.jpg')
