@@ -5,7 +5,6 @@ class Game {
         this.target = new Target()
         this.backgroundImage 
         this.tanksArr = []
-        
     }
     setup() {
     }
@@ -16,20 +15,21 @@ class Game {
             this.tanksArr.push(new Tanks())
         }
         this.tanksArr.forEach(function(tank) {
-             tank.draw()
+            tank.draw()
         })
-        this.tanksArr = this.tanksArr.filter(tank => {
-			if (tank.hitting(this.target) || tank.x < 0) {
-				return true
-			} else {
-				return false
-			}
-		})
     }
-
     preload() {
         this.backgroundImage = loadImage('/images/field.jpg')
         this.tankImage = loadImage('/images/tank2.png')
         this.targetImage = loadImage('/images/target.png')
+    }
+    hitTank() {
+        this.tanksArr = this.tanksArr.filter(tank => {
+            if (tank.hitting(this.target) || tank.x < 0) {
+            return false
+            } else {
+            return true
+            }
+        })
     }
 }

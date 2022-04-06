@@ -6,13 +6,16 @@ const height = 600;
 function draw() {
 	game.draw()
 }
-
 function setup() {
     createCanvas(width, height)
     game.setup()
 }
-
 function preload() {
     game.preload()
 }
+function mouseClicked() {
+    //console.log('mouse Clicked');
+    game.hitTank()
+  
+ }
 
