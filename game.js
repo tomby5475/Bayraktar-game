@@ -18,17 +18,13 @@ class Game {
         this.tanksArr.forEach(function(tank) {
              tank.draw()
         })
-        
-       
-       
-
-        // this.tanksArr = this.tanksArr.filter(tank => {
-		// 	if (tank.collision(targetX) || tank.x < 0) {
-		// 		return false
-		// 	} else {
-		// 		return true
-        // 		}
-        // })
+        this.tanksArr = this.tanksArr.filter(tank => {
+			if (tank.hitting(this.target) || tank.x < 0) {
+				return true
+			} else {
+				return false
+			}
+		})
     }
 
     preload() {
