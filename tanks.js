@@ -6,11 +6,12 @@ class Tanks {
         this.y = random(100, 500)
     }
     hitting() {
-	    // const tankX = this.x + this.width / 2
-	    // const tankY = this.y + this.height / 2
-	    // const targetX = mouseX + targetInfo.width / 2
-	    // const targetY = mouseY + targetInfo.height / 2
-        if (dist(this.x, this.y, mouseX, mouseY) < 30) {
+	    const tankX = this.x + this.width / 2
+	    const tankY = this.y + this.height / 2
+	    // const targetX = mouseX + game.target.width / 2
+	    // const targetY = mouseY + game.target.height / 2
+        const targetX = mouseX + game.target.width
+        if (dist(tankX , tankY, targetX, mouseY) > 40) {
 			return false
 		} else {
 			return true
