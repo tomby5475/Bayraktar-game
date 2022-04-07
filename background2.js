@@ -1,5 +1,5 @@
 class Background2 {
-    constructor() {
+    constructor(x, y) {
         this.x = 0
         this.y = 0
      }
@@ -7,3 +7,4 @@ class Background2 {
         image(game.backgroundImage2, this.x - 10, this.y - 10, width + 20, height + 20)
     }
 }
+

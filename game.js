@@ -1,5 +1,5 @@
 let counter = 0
-// let counterMiss = 0
+
 class Game {
     constructor (){
         this.background = new Background()
@@ -8,44 +8,51 @@ class Game {
         this.tanksArr = []
         this.background2 = new Background2()
         this.backgroundImage2
-        //this.counterMiss = 0
+        this.misscount = 0
+        this.backgroundLose = new BackgroundLose()
+        this.backgroundImageLose
     }
     setup() {
     }
     draw() {
-        if (counter < 3) {
+        if (counter < 30) {
         this.background.draw()
         this.tanksArr.forEach(function(tank) {
             tank.draw()
         })
         this.target.draw()
-        if (frameCount % 80 === 0) {
+        if (frameCount % 50 === 0) {
             this.tanksArr.push(new Tanks())
         }
         }
-        else {
+        
+        if (counter >= 30) {
             this.background2.draw()
         }
-        
-        
-        // textSize(50)
-        // text(counterMiss, width / 1.5, 50)
-        //console.log(this.tanksArr);
+        if (this.misscount > 10) {
+            this.backgroundLose.draw()
+        }
+        textSize(50)
+        text(counter, width / 3, 50)
+        textSize(50)
+        text(this.misscount, width / 1.5, 50)
 
         this.tanksArr = this.tanksArr.filter(tank => {
-            if (tank.x > width) {
-                console.log("missed");
+            if (tank.x > width + tank.width) {
+                console.log('missed');
+                this.misscount++
             return false 
             } else {
-            return true
+            return true 
             }
-        })       
+        })    
     }
     preload() {
         this.backgroundImage = loadImage('images/field.jpg')
         this.tankImage = loadImage('images/tank2.png')
-        this.targetImage = loadImage('images/targetRed.png')
+        this.targetImage = loadImage('images/target3.png')
         this.backgroundImage2 = loadImage('images/you_win2.png')
+        this.backgroundImageLose = loadImage('images/game-over.png')
     }
     hitTank() {
         this.tanksArr = this.tanksArr.filter(tank => {
