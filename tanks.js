@@ -4,6 +4,7 @@ class Tanks {
         this.height = 50
         this.x = 0
         this.y = random(100, 400)
+        this.misscount = 0
     }
     hitting() {
 	    const tankX = this.x + this.width / 2
@@ -12,7 +13,7 @@ class Tanks {
 	    // const targetY = mouseY + game.target.height / 2
         const targetX = mouseX + game.target.width
         if (dist(tankX , tankY, targetX, mouseY) > 40) {
-			return false
+			return false 
 		} else {
 			return true && counter++
 		}
@@ -23,6 +24,13 @@ class Tanks {
             this.x++
         }
     }
+    miss() {
+        //console.log('miss');
+        if (this.x > width +5) {
+            this.misscount++
+        }
+    }
 }
+
 
 
