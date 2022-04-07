@@ -5,6 +5,7 @@ class Tanks {
         this.x = 0
         this.y = random(100, 400)
         this.misscount = 0
+        //this.counter = 0
     }
     hitting() {
 	    const tankX = this.x + this.width / 2
@@ -23,6 +24,10 @@ class Tanks {
         if (this.x < width + this.width) {
             this.x++
         }
+        textSize(50)
+        text(counter, width / 3, 50)
+        textSize(50)
+        text(this.misscount, width / 1.5, 50)
     }
     miss() {
         //console.log('miss');

@@ -1,5 +1,5 @@
 let counter = 0
-let counterMiss = 0
+// let counterMiss = 0
 class Game {
     constructor (){
         this.background = new Background()
@@ -8,7 +8,7 @@ class Game {
         this.tanksArr = []
         this.background2 = new Background2()
         this.backgroundImage2
-        this.counterMiss = 0
+        //this.counterMiss = 0
     }
     setup() {
     }
@@ -27,11 +27,10 @@ class Game {
             this.background2.draw()
         }
         
-        textSize(50)
-        text(counter, width / 3, 50)
-        textSize(50)
-        text(counterMiss, width / 1.5, 50)
-        console.log(this.tanksArr);
+        
+        // textSize(50)
+        // text(counterMiss, width / 1.5, 50)
+        //console.log(this.tanksArr);
 
         this.tanksArr = this.tanksArr.filter(tank => {
             if (tank.x > width) {
@@ -46,13 +45,13 @@ class Game {
     preload() {
         this.backgroundImage = loadImage('/images/field.jpg')
         this.tankImage = loadImage('/images/tank2.png')
-        this.targetImage = loadImage('/images/target.png')
+        this.targetImage = loadImage('/images/targetRed.png')
         this.backgroundImage2 = loadImage('/images/you_win2.png')
     }
     hitTank() {
         this.tanksArr = this.tanksArr.filter(tank => {
             if (tank.hitting(this.target) || tank.x < 0) {
-            return false 
+            return false
             } else {
             return true
             }
