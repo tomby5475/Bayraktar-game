@@ -8,7 +8,6 @@ class Tanks {
     hitting() {
 	    const tankX = this.x + this.width / 2
 	    const tankY = this.y + this.height / 2
-        //let clicks = 0
 	    // const targetX = mouseX + game.target.width / 2
 	    // const targetY = mouseY + game.target.height / 2
         const targetX = mouseX + game.target.width
