@@ -1,4 +1,4 @@
-
+let counter = 0
 class Game {
     constructor (){
         this.background = new Background()
@@ -17,6 +17,8 @@ class Game {
         this.tanksArr.forEach(function(tank) {
             tank.draw()
         })
+        textSize(50)
+        text(counter, width / 2 - 25, 50)
     }
     preload() {
         this.backgroundImage = loadImage('/images/field.jpg')

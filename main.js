@@ -1,7 +1,7 @@
 const game = new Game()
 
-const width = 1000;
-const height = 600;
+const width = 800;
+const height = 500;
 
 function draw() {
 	game.draw()
@@ -14,8 +14,6 @@ function preload() {
     game.preload()
 }
 function mouseClicked() {
-    //console.log('mouse Clicked');
     game.hitTank()
-  
  }
 
