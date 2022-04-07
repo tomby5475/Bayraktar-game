@@ -39,14 +39,13 @@ class Game {
             } else {
             return true
             }
-        })
-        
+        })       
     }
     preload() {
-        this.backgroundImage = loadImage('/images/field.jpg')
-        this.tankImage = loadImage('/images/tank2.png')
-        this.targetImage = loadImage('/images/targetRed.png')
-        this.backgroundImage2 = loadImage('/images/you_win2.png')
+        this.backgroundImage = loadImage('images/field.jpg')
+        this.tankImage = loadImage('images/tank2.png')
+        this.targetImage = loadImage('images/targetRed.png')
+        this.backgroundImage2 = loadImage('images/you_win2.png')
     }
     hitTank() {
         this.tanksArr = this.tanksArr.filter(tank => {
