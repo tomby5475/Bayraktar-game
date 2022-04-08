@@ -15,18 +15,20 @@ class Game {
     setup() {
     }
     draw() {
-        if (counter < 30) {
+        if (counter < 20) {
         this.background.draw()
-        this.tanksArr.forEach(function(tank) {
-            tank.draw()
-        })
-        this.target.draw()
+        }
+        if (this.misscount <= 10) {
+            this.tanksArr.forEach(function(tank) {
+                tank.draw()
+            })
+            this.target.draw()
         if (frameCount % 50 === 0) {
             this.tanksArr.push(new Tanks())
-        }
+            }
         }
         
-        if (counter >= 30) {
+        if (counter >= 20) {
             this.background2.draw()
         }
         if (this.misscount > 10) {
@@ -34,12 +36,10 @@ class Game {
         }
         textSize(50)
         text(counter, width / 3, 50)
-        textSize(50)
         text(this.misscount, width / 1.5, 50)
-
         this.tanksArr = this.tanksArr.filter(tank => {
             if (tank.x > width + tank.width) {
-                console.log('missed');
+                console.log(this.misscount);
                 this.misscount++
             return false 
             } else {
@@ -56,7 +56,7 @@ class Game {
     }
     hitTank() {
         this.tanksArr = this.tanksArr.filter(tank => {
-            if (tank.hitting(this.target) || tank.x < 0) {
+            if (tank.hitting(this.target)) {
             return false
             } else {
             return true
