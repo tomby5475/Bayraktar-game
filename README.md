@@ -6,7 +6,7 @@ This is a web-based game developed using the p5.js library. In this game, tanks 
 
 1. Clone the repository or download the project files.
 
-`git clone https://github.com/tomby5475/Bayraktar-game`
+`git clone https://github.com/tomby5475/Bayraktar-game.git`
 
 2. Open the project directory in a code editor of your choice.
 3. Launch the game by opening the index.html file in a web browser.
