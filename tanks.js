@@ -1,3 +1,4 @@
+
 class Tanks {
     constructor() {
         this.width = 70
@@ -23,6 +24,8 @@ class Tanks {
         }
     }
 }
+
+
 
 
 
